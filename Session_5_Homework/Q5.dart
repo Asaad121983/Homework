@@ -7,7 +7,7 @@ return the first one that appears.
 */
 
 String longestWord(String sentence) {
-  List<String> words = sentence.trim().split(RegExp(r'\s+'));
+  List<String> words = sentence.split(' ');
   String longest = '';
   for (String word in words) {
     if (word.length > longest.length) {
@@ -18,6 +18,6 @@ String longestWord(String sentence) {
 }
 
 void main() {
-  String sentence = "The quick brown fox jumps over the lazy dog";
-  print("Longest word: ${longestWord(sentence)}");  // Output: jumps
+  String sentence = "Asaad Elsaadany Bedir";
+  print("Longest word: ${longestWord(sentence)}"); 
 }
