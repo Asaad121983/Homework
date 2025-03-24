@@ -29,40 +29,31 @@ class Library {
   String borrowBook(String isbn) {
     if (books.containsKey(isbn) && books[isbn]!.isAvailable) {
       books[isbn]!.isAvailable = false;
-      return '${books[isbn]!.title} borrowed successfully.';
-    }
+      return 'Book borrowed successfully.';
+    } 
     return 'Book not available or not found.';
   }
 
   String returnBook(String isbn) {
     if (books.containsKey(isbn)) {
       books[isbn]!.isAvailable = true;
-      return '${books[isbn]!.title} returned successfully.';
+      return 'Book returned successfully.';
     }
     return 'Book not found.';
   }
 
-  List<Book> searchByTitle(String title) {
-    return books.values
-        .where((book) => book.title.toLowerCase().contains(title.toLowerCase()))
-        .toList();
-  }
 }
 
 void main() {
   Library library = Library();
 
-  Book book1 = Book("1984", "George Orwell", "123");
-  Book book2 = Book("Animal Farm", "George Orwell", "456");
+  Book book1 = Book("2000", "Asaad", "123");
+  Book book2 = Book("IS", "Ali", "456");
 
   library.addBook(book1);
   library.addBook(book2);
 
-  print(library.borrowBook("123")); // 1984 borrowed successfully.
-  print(library.returnBook("123")); // 1984 returned successfully.
+  print(library.borrowBook("123")); 
+  print(library.returnBook("123")); 
 
-  List<Book> results = library.searchByTitle("Animal");
-  for (var book in results) {
-    print("Found book: ${book.title} by ${book.author}");
-  }
 }
