@@ -48,9 +48,9 @@ class PartTimeEmployee extends Employee {
 }
 
 void main() {
-  FullTimeEmployee fullTime = FullTimeEmployee("Alice", 1, 3000, 500);
-  PartTimeEmployee partTime = PartTimeEmployee("Bob", 2, 80, 20);
+  FullTimeEmployee fullTime = FullTimeEmployee("Asaad", 1, 3000, 10000);
+  PartTimeEmployee partTime = PartTimeEmployee("Ali", 2, 80, 20);
 
-  print("Full-time employee salary: ${fullTime.calculateSalary()}"); // 3500.0
-  print("Part-time employee salary: ${partTime.calculateSalary()}"); // 1600.0
+  print("Full-time employee salary: ${fullTime.calculateSalary()}");
+  print("Part-time employee salary: ${partTime.calculateSalary()}");
 }
