@@ -7,16 +7,39 @@ Ensure that the function correctly identifies prime numbers
 greater than end.
 */
 
-bool isPrime(int number) {
-  if (number < 2) return false;
-  for (int i = 2; i * i <= number; i++) {
-    if (number % i == 0) return false;
+bool checkPrime(int number) {
+  for (int i = 2; i < number; i++) {
+    if (number % i == 0) {
+      return false;
+    }
   }
   return true;
 }
 
-void main() {
-  print(isPrime(37));
-  print(isPrime(40));
-  print(isPrime(97));
+void main(){
+// call function
+int start = 10;  
+  int end = 50;   
+
+  List<int> primes = findPrimes(start, end);
+  if (primes.isEmpty) {
+    print("No prime numbers found ");
+  } else {
+    print("Prime numbers in the range $start to $end are: ${primes}");
+  }
 }
+
+List<int> findPrimes(int start, int end) {
+  List<int> primes = [];
+  if (start > end) {
+    return primes; 
+  }
+  for (int number = start; number <= end; number++) {
+    if (checkPrime(number)) {
+      primes.add(number);
+    }
+  }
+  return primes;
+}
+
+
