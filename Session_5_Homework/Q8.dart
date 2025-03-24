@@ -6,7 +6,12 @@ sumList([1, 2, 3, 4, 5]) -> 15
 */
 
 int sumList(List<int> numbers) {
-  return numbers.fold(0, (sum, number) => sum + number);
+
+  int sum = 0;
+  for (int number in numbers) {
+    sum += number;
+  }
+  return sum;
 }
 
 void main() {
