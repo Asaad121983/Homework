@@ -1,0 +1,53 @@
+//First Solution
+List<int> add(List<int> l1, int n) {
+  List<int> l2 = [];
+  int a = 0;
+  for (int i = 0; i < l1.length; i++) {
+      for(int j = i+1; j < l1.length; j++){
+        a = l1[i] + l1[j];
+        if(a == n && l1[i] != l1[j]){
+        l2.add(i);
+        l2.add(j);
+        }
+      }
+     }
+  return l2;
+}
+
+//Second Solution
+List<int> twoSum(List<int> nums, int target) {
+    Map<int, int> numMap = {}; 
+    for (int i = 0; i < nums.length; i++) {
+      int complement = target - nums[i];  
+      if (numMap.containsKey(complement)) {
+     
+        return [numMap[complement]!, i];
+      }
+      
+      numMap[nums[i]] = i;
+    }
+    return [];  
+  }
+
+  //Third Solution
+List<List<int>> findPairs(List<int> nums, int target) {
+    Map<int, int> numMap = {};
+    List<List<int>> results = [];
+
+    for (int i = 0; i < nums.length; i++) {
+      int complement = target - nums[i];
+      if (numMap.containsKey(complement)) {
+        results.add([numMap[complement]!,i]);
+      }
+      numMap[nums[i]] = i;  
+    }
+    return results;  
+  }
+
+void main() {
+  print("${add([1, 2, 3], 4)}");
+  
+  print(twoSum([2, 7, 11, 15], 9));
+    
+  print(findPairs([2, 7, 11, 15,1,8], 9));
+}
