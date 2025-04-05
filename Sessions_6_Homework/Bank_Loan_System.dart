@@ -77,16 +77,16 @@ class CarLoan extends Loan {
 class LoanProcessingSystem {
   List<Loan> loans = [];
 
-  void applyLoan(Loan loan) {
+   void applyLoan(Loan loan) {
     loans.add(loan);
-    print("Request Done Successfully");
+    print("Loan applied Successfully");
   }
 
   void calculateInstallments(int months) {
     for (var loan in loans) {
       double installment = loan.calculateMonthlyInstallment(months);
       print(
-        "Borrower Name : ${loan.borrowerName} | Period  $months months: ${installment.toStringAsFixed(2)}",
+        "Borrower Name : ${loan.borrowerName} | installment for  $months months: ${installment.toStringAsFixed(2)}",
       );
     }
   }
@@ -100,5 +100,5 @@ void main() {
   system.applyLoan(CarLoan("Yousef", 60000));
 
   print("\n Installments for 24 months ");
-  system.calculateInstallments(24);
+  system.calculateInstallments(36);
 }
