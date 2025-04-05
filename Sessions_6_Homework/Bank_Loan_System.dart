@@ -39,9 +39,8 @@ class PersonalLoan extends Loan {
 
   @override
   double calculateMonthlyInstallment(int months) {
-    double monthlyRate = interestRate! / 100 / 12;
-    return (loanAmount * monthlyRate) /
-        (1 - (1 / (pow(1 + monthlyRate, months))));
+      return (loanAmount + (loanAmount * interestRate!/100)) / months;
+    
   }
 }
 
@@ -53,9 +52,7 @@ class HomeLoan extends Loan {
 
   @override
   double calculateMonthlyInstallment(int months) {
-    double monthlyRate = interestRate! / 100 / 12;
-    return (loanAmount * monthlyRate) /
-        (1 - (1 / (pow(1 + monthlyRate, months))));
+    return (loanAmount + (loanAmount * interestRate!/100)) / months;
   }
 }
 
@@ -73,9 +70,7 @@ class CarLoan extends Loan {
   @override
   double calculateMonthlyInstallment(int months) {
     double totalAmount = loanAmount + processingFee;
-    double monthlyRate = interestRate! / 100 / 12;
-    return (totalAmount * monthlyRate) /
-        (1 - (1 / (pow(1 + monthlyRate, months))));
+    return (totalAmount + (loanAmount * interestRate!/100)) / months;
   }
 }
 
