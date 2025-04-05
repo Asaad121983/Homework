@@ -104,6 +104,6 @@ void main() {
   system.applyLoan(HomeLoan("Hana", 600000));
   system.applyLoan(CarLoan("Yousef", 60000));
 
-  print("\n---Installments for 24 months ---");
+  print("\n Installments for 24 months ");
   system.calculateInstallments(24);
 }
