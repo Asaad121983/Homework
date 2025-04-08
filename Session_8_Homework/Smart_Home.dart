@@ -73,9 +73,9 @@ class SmartHomeController {
 }
 
 void main() {
-  var light = Light();
-  var ac = AirConditioner();
-  var camera = SecurityCamera();
+  Light light = Light();
+  AirConditioner ac = AirConditioner();
+  SecurityCamera camera = SecurityCamera();
 
   var controller = SmartHomeController();
   controller.addDevice(light);
