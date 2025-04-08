@@ -19,7 +19,6 @@ Create a LoanProcessingSystem class that:
 - calculateInstallments(int months): Calculates the monthly installment for all loans.
 */
 
-import 'dart:math';
 
 abstract class Loan {
   String borrowerName;
